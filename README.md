@@ -2,9 +2,11 @@
 
 ## Project Overview
 
-This project focuses on the design, electromagnetic simulation, fabrication, and hardware testing of a dipole antenna operating around **144 MHz**, within the 2-metre amateur radio band.
+This project focuses on the design, electromagnetic simulation, fabrication, and experimental validation of a dipole antenna operating around **144 MHz**, within the 2-metre amateur radio band.
 
-The antenna was designed and simulated using **Ansys HFSS** and subsequently fabricated and tested using a Vector Network Analyzer (VNA).
+The antenna was designed and simulated using **Ansys HFSS**, followed by physical fabrication and hardware testing using a Vector Network Analyzer (VNA).
+
+The project demonstrates the complete antenna development process, from electromagnetic modeling to practical hardware implementation and performance evaluation.
 
 ## Project Objectives
 
@@ -13,13 +15,13 @@ The antenna was designed and simulated using **Ansys HFSS** and subsequently fab
 - Analyze antenna impedance matching and return loss.
 - Fabricate the antenna according to the designed structure.
 - Perform practical measurements using a VNA.
-- Evaluate the agreement between simulated and measured performance.
+- Evaluate simulated and measured antenna performance.
 
 ## Design and Simulation
 
-The antenna geometry was developed in Ansys HFSS.
+The antenna geometry was developed and modeled in Ansys HFSS.
 
-The simulation was used to evaluate the antenna's S11 response and resonant characteristics.
+The electromagnetic simulation was performed to analyze the antenna's reflection coefficient (S11), resonance behavior, and impedance matching characteristics.
 
 ### HFSS Antenna Model
 
@@ -31,15 +33,22 @@ The simulation was used to evaluate the antenna's S11 response and resonant char
 
 **Simulation observations:**
 
-- Approximate resonant frequency: 147.16 MHz
-- Minimum S11: approximately -16 dB
-- Lower -10 dB frequency: approximately 141.04 MHz
-- Upper -10 dB frequency: approximately 156.64 MHz
-- Approximate -10 dB bandwidth: 15.60 MHz
+- Target operating frequency: 144 MHz
+- Approximate minimum S11: −18.5 dB
+- Resonance region: Approximately 144–145 MHz
+- Frequency marker: 144 MHz
+
+The simulated response exhibits a pronounced resonance dip near the intended operating frequency, indicating good impedance matching.
+
+At the resonance minimum, approximately 98.6% of the incident power is accepted at the input reference plane, with approximately 1.4% reflected power.
+
+*Note: The accepted-power figure represents power not reflected at the input and does not directly indicate radiation efficiency.*
 
 ## Hardware Fabrication
 
-Following the simulation, the antenna was physically fabricated and assembled with a coaxial feeding arrangement.
+Following the electromagnetic simulation, the antenna was physically fabricated and assembled with a coaxial feeding arrangement.
+
+The fabricated structure was prepared for practical RF characterization.
 
 ### Fabricated Antenna
 
@@ -47,58 +56,83 @@ Following the simulation, the antenna was physically fabricated and assembled wi
 
 ## Hardware Testing and Measurements
 
-The fabricated antenna was tested using a Vector Network Analyzer (VNA) to evaluate its impedance matching characteristics.
+The fabricated antenna was experimentally tested using a Vector Network Analyzer (VNA) to evaluate its impedance matching characteristics.
 
 ### Measured S11
 
-![Hardware S11](images/enhanced/vna_s11_hardware.jpg)
+![Hardware S11 Measurement](images/enhanced/vna_s11_hardware.jpg)
 
 - Operating frequency marker: 144 MHz
-- Measured S11: approximately -17.70 dB
+- Measured S11: Approximately −17.70 dB
 
 ### Measured VSWR
 
-![Hardware VSWR](images/enhanced/vna_vswr_hardware.jpg)
+![Hardware VSWR Measurement](images/enhanced/vna_vswr_hardware.jpg)
 
 - Operating frequency marker: 144 MHz
-- Displayed VSWR: approximately 1.18
+- Displayed VSWR: Approximately 1.18
 
 These measurements indicate promising impedance matching around the intended operating frequency.
 
-**Measurement note:** The displayed S11 and VSWR values should be rechecked at the same frequency and calibration conditions because they are not mathematically equivalent as currently reported.
+**Measurement note:** The displayed S11 and VSWR values should be independently verified at the same frequency and calibration reference plane. An S11 of −17.70 dB corresponds to a VSWR of approximately 1.29, rather than 1.18. This discrepancy should be investigated before reporting the values as a single consistent measurement.
+
+## Simulation vs. Hardware Performance
+
+An important aspect of this project was validating the HFSS antenna design through practical hardware fabrication and experimental testing.
+
+The simulated response exhibits a minimum S11 of approximately −18.5 dB near the 144 MHz operating region, while the hardware measurement indicates an S11 of approximately −17.70 dB at 144 MHz.
+
+The results demonstrate comparable impedance-matching performance between the simulated and fabricated antenna.
+
+Minor differences between simulation and hardware measurements can arise from several practical factors:
+
+- **Fabrication tolerances:** Small variations in antenna dimensions can influence resonance and impedance matching.
+- **Material properties:** Actual conductor properties may differ from the material assumptions used in HFSS.
+- **Feeding arrangement:** The coaxial cable, connector, and feed-point configuration can affect the input impedance.
+- **Simulation conditions:** Idealized simulation conditions may not fully represent the practical environment.
+- **Measurement setup:** VNA calibration, cable positioning, and nearby objects can influence measured results.
+
+The comparison demonstrates the importance of practical experimental validation alongside electromagnetic simulation.
+
+For a more rigorous comparison, the simulated and measured S11 values should be extracted at exactly the same frequency and under comparable reference-plane conditions.
 
 ## Results Summary
 
 | Parameter | Result |
 |---|---:|
-| Target frequency | 144 MHz |
-| Simulated resonance | 147.16 MHz |
-| Simulated minimum S11 | ~ -16 dB |
-| Simulated bandwidth | ~15.60 MHz |
-| Hardware S11 | ~ -17.70 dB |
-| Hardware VSWR | ~1.18 |
+| Target operating frequency | 144 MHz |
+| Simulated minimum S11 | Approximately −18.5 dB |
+| Simulated resonance region | Approximately 144–145 MHz |
+| Hardware S11 | Approximately −17.70 dB |
+| Hardware VSWR | Approximately 1.18 (displayed) |
+| Testing equipment | VNA |
 
 ## Tools and Technologies
 
-- Ansys HFSS – Electromagnetic simulation
-- Vector Network Analyzer (VNA) – Hardware testing
+- **Ansys HFSS** – 3D electromagnetic modeling and simulation
+- **Vector Network Analyzer (VNA)** – RF hardware testing
 - Antenna Design and RF Engineering
 - Electromagnetic Analysis
-- Hardware Fabrication and Validation
+- Hardware Fabrication and Experimental Validation
 
 ## Conclusion
 
-The project demonstrates the complete development process of a 144 MHz dipole antenna, from electromagnetic simulation in Ansys HFSS to physical fabrication and practical VNA measurements.
+This project demonstrates the complete development of a 144 MHz dipole antenna, encompassing electromagnetic design, HFSS simulation, physical fabrication, and experimental RF characterization.
 
-The measured hardware results indicate promising impedance matching near the intended operating frequency. Further optimization and characterization can improve the agreement between simulated and measured performance.
+The HFSS simulation achieved a minimum S11 of approximately −18.5 dB near the intended operating frequency. Hardware testing further demonstrated promising impedance matching, with a measured S11 of approximately −17.70 dB at 144 MHz.
+
+The close agreement between these results provides encouraging evidence of the practical feasibility of the antenna design.
+
+The project highlights the application of electromagnetic simulation and experimental measurement in RF antenna engineering.
 
 ## Future Improvements
 
-- Optimize antenna dimensions to centre resonance at 144 MHz.
-- Compare simulated and measured S11 responses under identical conditions.
+- Further optimize antenna dimensions to centre resonance precisely at 144 MHz.
+- Obtain calibrated simulated and measured S11 sweeps for direct comparison.
+- Verify VSWR consistency with measured S11.
 - Evaluate radiation patterns and antenna gain.
-- Determine radiation efficiency.
-- Investigate feeding arrangements and impedance matching.
+- Investigate radiation efficiency.
+- Explore feeding arrangements and impedance-matching optimization.
 
 ---
 
@@ -108,5 +142,4 @@ The measured hardware results indicate promising impedance matching near the int
 
 **Testing Equipment:** Vector Network Analyzer (VNA)
 
-Author
-Engr. Amna Zaheer
+**Author:** Engr. Amna Zaheer
