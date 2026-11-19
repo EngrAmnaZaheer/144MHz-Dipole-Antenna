@@ -16,6 +16,21 @@ The project demonstrates the complete antenna development process, from electrom
 - Fabricate the antenna according to the designed structure.
 - Perform practical measurements using a VNA.
 - Evaluate simulated and measured antenna performance.
+## Antenna Design Specifications
+
+The antenna was designed for a target operating frequency of 144 MHz using the half-wave dipole configuration.
+
+| Parameter | Design Value |
+|---|---:|
+| Operating Frequency | 144 MHz |
+| Free-Space Wavelength | 2.0833 m |
+| Theoretical Half-Wave Length | 1.0417 m |
+| Estimated Practical Total Length | 0.9931 m |
+| Estimated Arm Length | 49.65 cm each |
+
+The initial dimensions were calculated analytically and used as a starting point for electromagnetic modeling and optimization in Ansys HFSS.
+
+**Detailed mathematical derivations:** [Antenna Design Calculations](docs/antenna_design_calculations.md)
 
 ## Design and Simulation
 
