@@ -16,6 +16,15 @@ The project demonstrates the complete antenna development process, from electrom
 - Fabricate the antenna according to the designed structure.
 - Perform practical measurements using a VNA.
 - Evaluate simulated and measured antenna performance.
+  
+## HFSS Simulation Project
+
+The Ansys HFSS simulation project is available in the [`simulation`](simulation/) directory.
+
+It is provided as a customizable reference model that can be modified to explore different antenna configurations, dipole arm lengths, feed parameters, and frequency sweeps. Users can investigate the antenna's performance and perform further optimization according to their design requirements.
+
+See the [Simulation README](simulation/README.md) for details about the model and its design flexibility.
+
 ## Antenna Design Specifications
 
 The antenna was designed for a target operating frequency of 144 MHz using the half-wave dipole configuration.
